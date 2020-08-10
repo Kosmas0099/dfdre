@@ -1,0 +1,49 @@
+﻿<?php
+   // VN geo test
+   //$_SERVER['REMOTE_ADDR'] = '122.155.219.60';
+   
+   // error reporting
+   error_reporting(E_ERROR);
+   ini_set('display_errors', 1);
+   
+   /* this is required section */
+   require __DIR__.'/../blackbox/BlackBox.php';
+   
+   use BlackBox\BlackBox;
+   global $bb, $price;
+   $config = require __DIR__ . '/config.php';
+   $bb = new BlackBox($_GET, $config);
+?>
+<!DOCTYPE html>
+<html lang="vi">
+   <head>
+      <meta charset="UTF-8">
+      <title>Terima kasih! Pesanan Anda telah diterima!</title>
+      <link href="home.css" rel="stylesheet">
+      <style>
+         .thankyou {font-family: arial;font-size: 24px !important;border-radius: 4px;background-color: #fff;padding: 50px 30px;text-align: center;line-height: 1.8em;}html, body, #app {min-height: 100%;height: 100%;}.thanks-section {min-height: calc(100% - 200px);padding-top: 10%;background: #ebedf1;}.thanks-section h1 {color: green;}
+      </style>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=280097926738184&ev=Lead&noscript=1"/>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=302689027578321&ev=Lead&noscript=1"/>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=383498385958976&ev=Lead&noscript=1"/>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=2577951858974048&ev=Lead&noscript=1"/>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=309926957059894&ev=Lead&noscript=1"/>
+	  <img height="1" width="1" src="https://www.facebook.com/tr?id=224051068680486&ev=Lead&noscript=1"/>
+   </head>
+   <body>
+      <section class="thanks-section">
+         <div class="container">
+            <div class="col-md-12 text-center">
+               <div class="thankyou">
+                  <h1><i class="fa fa-check-circle-o"></i>Terima kasih! Pesanan Anda telah diterima!</h1>
+                  <p>
+                     Operator kami akan akan menghubungi Anda untuk mengonfirmasi pesanannya. Pengiriman dilayani oleh jasa kurir. Bayar - saat barang sampai!
+                  </p>
+                
+               </div>
+            </div>
+         </div>
+      </section>
+      <script><?=  $bb->getThanksPageCustomScripts(); ?></script>
+   </body>
+</html>
